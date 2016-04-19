@@ -151,14 +151,15 @@ angular.module('bb', ['directives', 'device', 'chrono', 'notifications'])
     
     var player = currentPlayer();
     player.chrono.stop();
-
-    if (player.remainingPeriods()) {
-      player.chrono.reset();
-      player.periods += 1;
-    }
+    player.chrono.reset();
 
     $scope.isBlackPlaying = !$scope.isBlackPlaying;
-    currentPlayer().chrono.start();
+    player = currentPlayer();
+
+    if (player.remainingPeriods()) {
+      player.periods += 1;
+      player.chrono.start();
+    }
   };
   
   $scope.settings = {
