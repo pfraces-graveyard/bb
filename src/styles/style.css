@@ -30,6 +30,10 @@ body {
   height: 75%;
 }
 
+.switch.initial {
+  height: 50%;
+}
+
 .box {
   position: absolute;
   top: 0.4em;
