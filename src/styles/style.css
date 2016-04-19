@@ -156,7 +156,15 @@ body {
   border-bottom: 1px solid black;
 }
 
-.settings input {
+.settings input[type="text"] {
+  position: relative;
+  float: right;
+  width: 9em;
+  border: 0;
+  font-size: 1em;
+}
+
+.settings input[type="number"] {
   position: relative;
   float: right;
   width: 3em;
