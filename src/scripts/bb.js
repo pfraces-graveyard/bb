@@ -106,6 +106,8 @@ angular.module('bb', ['directives', 'device', 'chrono', 'notifications'])
           pauseGame();
           return;
         }
+
+        player.chrono.stop();
       }
     }, 200);
   };
