@@ -5,6 +5,18 @@
     <table>
 
       <tr>
+        <td><label for="player-local">Local</label></td>
+        <td><input type="text" ng-model="settings.player.local" autoselect name="player-local" id="player-local" /></td>
+      </tr>
+
+      <tr>
+        <td><label for="player-visitor">Visitor</label></td>
+        <td><input type="text" ng-model="settings.player.visitor" autoselect name="player-visitor" id="player-visitor" /></td>
+      </tr>
+
+      <hr />
+
+      <tr>
         <td><label for="periods">Number of periods</label></td>
         <td><input type="number" ng-model="settings.periods" autoselect name="periods" id="periods" /></td>
       </tr>

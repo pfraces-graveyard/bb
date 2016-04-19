@@ -149,11 +149,12 @@ angular.module('bb', ['directives', 'device', 'chrono', 'notifications'])
       return;
     }
     
-    currentPlayer().chrono.stop();
+    var player = currentPlayer();
+    player.chrono.stop();
 
-    if (currentPlayer().periods) {
-      currentPlayer().chrono.reset();
-      currentPlayer().periods += 1;
+    if (player.remainingPeriods()) {
+      player.chrono.reset();
+      player.periods += 1;
     }
 
     $scope.isBlackPlaying = !$scope.isBlackPlaying;
@@ -161,6 +162,10 @@ angular.module('bb', ['directives', 'device', 'chrono', 'notifications'])
   };
   
   $scope.settings = {
+    players: {
+      local: 'Local',
+      visitor: 'Visitor'
+    },
     periods: 8,
     period: 4 * 60 // seconds
   };
