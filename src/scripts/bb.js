@@ -136,13 +136,13 @@ angular.module('bb', ['directives', 'device', 'chrono', 'notifications'])
     resumeGame();
   };
   
-  var switchPlayer = function () {
+  var switchPlayer = function (initial) {
     if ($scope.gameOver) { return; }
     vibrate();
     
     if ($scope.initialMove) {
       $scope.initialMove = false;
-      $scope.isBlackPlaying = !$scope.isBlackPlaying;
+      $scope.isBlackPlaying = (initial === 'black');
       resumeGame();
       return;
     }

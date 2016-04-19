@@ -1,14 +1,14 @@
 <div ng-if="initialMove" class="clock">
   
   <div class="switch initial">
-    <div touch-start="switchPlayer()" class="box player white rotate">
+    <div touch-start="switchPlayer('white')" class="box player white rotate">
       <p class="time-left" ng-bind="white.remainingTime()" ng-class="{ warning: white.remainingMiliseconds() <= 10000 }"></p>
       <p class="periods-left" ng-if="white.remainingPeriods()" ng-bind="white.periods + 1"></p>
     </div>
   </div>
 
   <div class="switch initial">
-    <div touch-start="switchPlayer()" class="box player black">
+    <div touch-start="switchPlayer('black')" class="box player black">
       <p class="time-left" ng-bind="black.remainingTime()" ng-class="{ warning: black.remainingMiliseconds() <= 10000 }"></p>
       <p class="periods-left" ng-if="black.remainingPeriods()" ng-bind="black.periods + 1"></p>
     </div>
