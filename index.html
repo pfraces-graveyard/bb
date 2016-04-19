@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="src/styles/reset.css" />
+    <link rel="stylesheet" href="src/styles/style.css" />
+
+    <script src="cordova.js"></script>
+    <script src="vendor/angular.js"></script>
+
+    <script src="src/scripts/directives.js"></script>
+    <script src="src/scripts/touch.js"></script>
+    <script src="src/scripts/autoselect.js"></script>
+
+    <script src="src/scripts/device.js"></script>
+    <script src="src/scripts/notifications.js"></script>
+    <script src="src/scripts/chrono.js"></script>
+
+    <script src="src/scripts/bb.js"></script>
+  </head>
+
+  <body ng-app="bb" ng-controller="clock">
+    <div ng-include="'src/partials/clock.html'"></div>
+    <div ng-if="showMenu" ng-include="'src/partials/menu.html'" class="backdrop"></div>
+    <div ng-if="showSettings" ng-include="'src/partials/settings.html'" class="backdrop"></div>
+  </body>
+
+</html>
