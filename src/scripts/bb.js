@@ -33,9 +33,7 @@ angular.module('bb', ['directives', 'device', 'chrono', 'notifications'])
   
   var remainingMilisecondsFn = function (player) {
     return function () {
-      var mainTime = $scope.settings.main * 60 * 1000;
-      var periodTime = $scope.settings.period * 1000;
-      var turnTime = player.periods ? periodTime : mainTime;
+      var turnTime  = $scope.settings.period * 1000;
       return turnTime - player.chrono.elapsed();
     };
   };
