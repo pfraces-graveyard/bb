@@ -1,19 +1,31 @@
 angular.module('touch', [])
 
-.directive('touchStart', function ($parse) {
+.factory('isTouchSupported', function ($document) {
   'use strict';
 
-  var link = function (scope, element, attr) {
-    var expr = $parse(attr.touchStart);
+  var isTouchSupported = function () {
+    return 'ontouchstart' in $document[0].documentElement;
+  };
 
-    element.on('touchstart', function (event) {
-      scope.$apply(function () {
-        expr(scope, { $event: event });
+  return isTouchSupported;
+})
+
+.directive('touchStart', function ($parse, isTouchSupported) {
+  'use strict';
+
+  var link = function ($scope, $element, $attrs) {
+    var expr = $parse($attrs.touchStart);
+    var eventType = isTouchSupported() ? 'touchstart' : 'click';
+
+    $element.on(eventType, function (event) {
+      $scope.$apply(function () {
+        expr($scope, { $event: event });
       });
     });
   };
 
   return {
+    scope: true,
     link: link
   };
 });
