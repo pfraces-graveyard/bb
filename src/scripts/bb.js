@@ -155,10 +155,14 @@ angular.module('bb', ['directives', 'device', 'chrono', 'notifications'])
     $scope.isBlackPlaying = !$scope.isBlackPlaying;
     player = currentPlayer();
 
-    if (player.remainingPeriods()) {
-      player.periods += 1;
-      player.chrono.start();
+    if (!player.remainingPeriods()) {
+      $scope.gameOver = true;
+      pauseGame();
+      return;
     }
+
+    player.periods += 1;
+    player.chrono.start();
   };
   
   $scope.settings = {
