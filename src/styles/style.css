@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #630;
+  background-color: white;
   font-family: "Arial";
   font-weight: bold;
 }
@@ -47,12 +47,12 @@ body {
 }
 
 .box.black {
-  background-color: #009;
+  background-color: #00f;
   color: white;
 }
 
 .box.white {
-  background-color: #900;
+  background-color: #f00;
   color: white;
 }
 
@@ -149,6 +149,10 @@ body {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.settings.box {
+  background-color: white;
 }
 
 .settings table {
