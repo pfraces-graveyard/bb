@@ -143,6 +143,7 @@ angular.module('bb', ['directives', 'device', 'chrono', 'notifications'])
     if ($scope.initialMove) {
       $scope.initialMove = false;
       $scope.isBlackPlaying = (initial === 'black');
+      currentPlayer().periods += 1;
       resumeGame();
       return;
     }
