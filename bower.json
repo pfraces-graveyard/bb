@@ -1,0 +1,6 @@
+{
+  "name": "bb",
+  "devDependencies": {
+    "angular": "1.*"
+  }
+}

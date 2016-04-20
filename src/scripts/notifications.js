@@ -1,12 +1,22 @@
 angular.module('notifications', ['device'])
 
-.factory('beep', function (onReady) {
+.factory('media', function ($window) {
+  'use strict';
+
+  var media = function (path) {
+    return new $window.Media(path);
+  };
+
+  return media;
+})
+
+.factory('beep', function (onReady, media) {
   'use strict';
   
   var snd = null;
   
   onReady(function () {
-    snd = new Media('/android_asset/www/sounds/beep.mp3');
+    snd = media('/android_asset/www/sounds/beep.mp3');
   });
     
   var beep = function () {

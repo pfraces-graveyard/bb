@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "del": "*",
+    "gulp": "*",
+    "gulp-eslint": "*",
+    "husky": "*"
+  },
+  "scripts": {
+    "setup": "npm install && bower install && gulp vendor",
+    "upgrade": "npm update && bower update && gulp vendor",
+    "lint": "gulp lint",
+    "test": "gulp  test",
+    "precommit": "npm test"
+  }
+}
