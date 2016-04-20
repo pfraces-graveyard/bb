@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #fc0;
+  background-color: #630;
   font-family: "Arial";
   font-weight: bold;
 }
@@ -47,13 +47,13 @@ body {
 }
 
 .box.black {
-  background-color: black;
+  background-color: #009;
   color: white;
 }
 
 .box.white {
-  background-color: white;
-  color: black;
+  background-color: #900;
+  color: white;
 }
 
 .box.blue {
@@ -88,7 +88,7 @@ body {
 }
 
 .time-left.warning {
-  color: red;
+  color: #ff0;
 }
 
 .periods-left {
